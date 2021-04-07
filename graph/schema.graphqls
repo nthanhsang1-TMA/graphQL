@@ -1,0 +1,19 @@
+type Person {
+    _id: String!
+    name: String!
+    isGoodBoi: Boolean!
+}
+
+type Query {
+    person(_id:String!): Person!
+    persons(columns: [String!],filter:String!): [Person!]!
+}
+
+input NewPerson {
+    name: String!
+    isGoodBoi: Boolean!
+}
+
+type Mutation {
+    createPerson(input:NewPerson): Person!
+}
